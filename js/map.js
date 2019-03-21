@@ -397,7 +397,7 @@
       function mapMarkerMaker(data1, data2){
         var marker = new google.maps.Marker({
             map: map,
-            draggable: true,
+            draggable: false,
             // animation: google.maps.Animation.DROP,
             // position: {lat: -36.846816, lng: 174.762747}
             position: {lat: Number(data1), lng: Number(data2)}
@@ -426,6 +426,9 @@
           //Clicking on the marker will toggle the animation between a BOUNCE
           // animation and no animation.
           // * start
+          if (marker) {
+            marker.setMap(null);
+          }
           marker = new google.maps.Marker({
             map: map,
             draggable: true,

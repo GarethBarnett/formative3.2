@@ -46,4 +46,18 @@ table {
   border-spacing: 0; }
 
 body {
-  background: #ababab; }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: black; }
+
+.anim, .anim svg {
+  position: relative;
+  height: 100vh; }
+
+.anim path {
+  stroke-width: 1; }

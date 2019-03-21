@@ -1,5 +1,7 @@
-/* Always set the map height explicitly to define the size of the div
-* element that contains the map. */
+@import "reset";
+@import "global";
+
+
 #map {
   height: 100%;
 }

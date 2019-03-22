@@ -11,9 +11,11 @@
 
     // console.log(positionX,typeof positionX)
     var icons = {
-        icon: './img/atbus1.svg'
+        icon: './img/smallbus.svg'
     }
       var map, infoWindow, marker;
+      var markers = [];
+      var userCurrentLocation = [];
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -36.72738, lng: 174.70787717},
@@ -372,7 +374,9 @@
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
-            // console.log(pos)
+            userCurrentLocation = [-36.791073, 174.769870];
+            // userCurrentLocation = [position.coords.latitude, position.coords.longitude];
+
             infoWindow.setPosition(pos);
             infoWindow.setContent('Location found.');
             infoWindow.open(map);
@@ -433,7 +437,11 @@
             map: map,
             draggable: true,
             animation: google.maps.Animation.DROP,
-            icon: icons.icon,
+            icon: {url: icons.icon, scaledSize: new google.maps.Size(20, 20)},
+            // icon: icons.icon,
+            // zoom: 10,
+            // size: new google.maps.Size(20, 20),
+            // scaledSize: new google.maps.Size(10, 10),
             // position: {lat: -36.846816, lng: 174.762747}
             position: {lat: Number(data1), lng: Number(data2)}
           // position: {lat: position[0], lng: position[1]}
@@ -447,4 +455,60 @@
             }
           }
           // * end
+    }
+
+    function presentAllBuese(val){
+        // console.log(val, markers.length)
+          if (markers) {
+              for(let i = 0; i < markers.length; i++){
+                markers[i].setMap(null);
+              }
+          }
+        // current location of user: -36.856954, 174.764307
+        //                           -36.856957, 174.764432
+          console.log( userCurrentLocation[0],  userCurrentLocation[1])
+          if(userCurrentLocation[0]){
+            val.forEach((currentValue, index, array)=>{
+              
+                if((currentValue[0] <= (userCurrentLocation[0]+ 0.01)) && (currentValue[0] >= (userCurrentLocation[0] - 0.01))){
+                    // console.log('first condition')
+                    if((currentValue[1] <= (userCurrentLocation[1] + 0.01)) && (currentValue[1] >= (userCurrentLocation[1] - 0.01))){
+                        // console.log('second condtion')
+                      marker = new google.maps.Marker({
+                          map: map,
+                          draggable: true,
+                          animation: google.maps.Animation.DROP,
+                          icon: {url: icons.icon, scaledSize: new google.maps.Size(20, 20)},
+            // icon: icons.icon,
+                          position: {lat: currentValue[0], lng: currentValue[1]}
+                        });
+                        marker.addListener('click', toggleBounce);
+                    }
+                    // console.log('test if condition')
+                }
+  
+              // for single all buses without any condition
+              //   marker = new google.maps.Marker({
+              //     map: map,
+              //     draggable: true,
+              //     animation: google.maps.Animation.DROP,
+              //     icon: {url: icons.icon, scaledSize: new google.maps.Size(20, 20)},
+              //     position: {lat: currentValue[0], lng: currentValue[1]}
+              //   });
+  
+  
+              //   marker.addListener('click', toggleBounce);
+            function toggleBounce() {
+              if (marker.getAnimation() !== null) {
+                marker.setAnimation(null);
+              } else {
+                marker.setAnimation(google.maps.Animation.BOUNCE);
+              }
+          }
+              // console.log(currentValue, index)
+            })
+          }else{
+              console.log('else')
+          }
+          
     }

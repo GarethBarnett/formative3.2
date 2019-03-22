@@ -1,3 +1,8 @@
+html{
+  width: 100%;
+  height: 100%;
+}
+
 body{
 	font-family: 'Heebo', sans-serif;
 	line-height: 1.2;
@@ -18,6 +23,12 @@ h3{
 	font-size: 30px;
 	font-weight: 400;
 }
+
+h4{
+  font-size: 20px;
+  font-weight: 400;
+}
+
 
 a{
 	text-decoration: none;
@@ -82,25 +93,22 @@ cursor: pointer;
   transform: rotate(135deg);
 }
 
+
+
 // Hamburger Menu End
 
-
-
-
 #menu{
-    width: 90vw;
+    width: 100%;
     height: 100%;
     top: 0;
-    left: -400px;
+    left: -1400px;
     overflow:hidden;
     background-color: black;
     // box-shadow: 5px 5px 10px grey;
     position: absolute;
     z-index: 11;
     opacity: 0;
-    transition: all 0.25s;
-    -webkit-transition: all 0.25s;
-    
+    transition: all 0.5s;
 }
 
 

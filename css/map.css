@@ -146,8 +146,14 @@ html, body {
   padding: 0; }
 
 header {
+  position: sticky;
+  top: 0;
   background: #ffffff;
-  height: 105px; }
+  height: 90px;
+  z-index: 50;
+  -webkit-box-shadow: 6px 6px 5px -9px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 6px 6px 5px -9px rgba(0, 0, 0, 0.75);
+  box-shadow: 6px 6px 5px -9px rgba(0, 0, 0, 0.75); }
 
 .logo {
   position: absolute;

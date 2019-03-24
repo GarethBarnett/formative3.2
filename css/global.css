@@ -1,0 +1,91 @@
+html {
+  width: 100%;
+  height: 100%; }
+
+body {
+  font-family: 'Heebo', sans-serif;
+  line-height: 1.2; }
+
+h1 {
+  font-size: 50px;
+  font-weight: 900; }
+
+h2 {
+  font-size: 40px;
+  font-weight: 500; }
+
+h3 {
+  font-size: 30px;
+  font-weight: 400; }
+
+h4 {
+  font-size: 20px;
+  font-weight: 400; }
+
+a {
+  text-decoration: none; }
+
+.menu-btn {
+  position: absolute;
+  top: 50px;
+  left: 30px;
+  z-index: 12;
+  cursor: pointer; }
+
+.menu-btn .hamburger {
+  width: 45px;
+  height: 5px;
+  position: absolute;
+  background-color: #ffffff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: all .5s ease-in-out; }
+
+.menu-btn .hamburger::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  width: 45px;
+  height: 5px;
+  position: absolute;
+  background-color: #ffffff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: all .5s ease-in-out; }
+
+.menu-btn .hamburger::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  width: 45px;
+  height: 5px;
+  position: absolute;
+  background-color: #ffffff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: all .5s ease-in-out; }
+
+.menu-btn.is-active .hamburger {
+  background-color: transparent;
+  box-shadow: transparent; }
+
+.menu-btn.is-active .hamburger::before {
+  top: 0;
+  transform: rotate(45deg); }
+
+.menu-btn.is-active .hamburger::after {
+  top: 0;
+  transform: rotate(135deg); }
+
+#menu {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -1400px;
+  overflow: hidden;
+  background-color: black;
+  position: absolute;
+  z-index: 11;
+  opacity: 0;
+  transition: all 0.5s; }
+
+#menu.enter {
+  opacity: 1;
+  left: 0; }

@@ -46,8 +46,8 @@ cursor: pointer;
 }
 
 .menu-btn .hamburger {
-  width: 45px;
-  height: 5px;
+  width: 43px;
+  height: 4px;
   position: absolute;
   background-color: #ffffff;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
@@ -58,8 +58,8 @@ cursor: pointer;
   content: '';
   position: absolute;
   top: -15px;
-  width: 45px;
-  height: 5px;
+  width: 43px;
+  height: 4px;
   position: absolute;
   background-color: #ffffff;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
@@ -70,8 +70,8 @@ cursor: pointer;
   content: '';
   position: absolute;
   top: 15px;
-  width: 45px;
-  height: 5px;
+  width: 43px;
+  height: 4px;
   position: absolute;
   background-color: #ffffff;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
@@ -115,4 +115,8 @@ cursor: pointer;
 #menu.enter{
     opacity: 1;
     left: 0;
+}
+.height {
+  height: 100vh !important;
+  z-index: 999;
 }

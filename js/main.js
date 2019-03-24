@@ -18,15 +18,17 @@ for (let i = 0; i < pathEls.length; i++) {
     autoplay: true
   });
 }
-  
+
 
 // Hamburger Menu animation
 
 
 const menu = document.getElementsByClassName("menu-btn")[0];
-   menu.onclick = function() {
-        menu.classList.toggle('is-active');
-        document.getElementById("menu").classList.toggle('enter');
+const header = document.getElementById("menu");
+menu.onclick = function () {
+  menu.classList.toggle('is-active');
+  header.classList.toggle('height');
+  document.getElementById("menu").classList.toggle('enter');
 };
 
 

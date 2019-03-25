@@ -184,3 +184,7 @@ header {
 
 .menu-btn.is-active .hamburger::after {
   background-color: #fff; }
+
+.gm-style .gm-style-iw-d {
+  text-align: center;
+  font-weight: 500; }

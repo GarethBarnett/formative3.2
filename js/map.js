@@ -429,8 +429,8 @@
         }
         if(userCurrentLocation[0]){
             val.forEach((currentValue, index, array)=>{
-                if((currentValue[0] <= (userCurrentLocation[0]+ 0.015)) && (currentValue[0] >= (userCurrentLocation[0] - 0.015))){
-                    if((currentValue[1] <= (userCurrentLocation[1] + 0.015)) && (currentValue[1] >= (userCurrentLocation[1] - 0.015))){
+                if((currentValue[0] <= (userCurrentLocation[0]+ 0.01)) && (currentValue[0] >= (userCurrentLocation[0] - 0.01))){
+                    if((currentValue[1] <= (userCurrentLocation[1] + 0.01)) && (currentValue[1] >= (userCurrentLocation[1] - 0.01))){
                         marker = new google.maps.Marker({
                             map: map,
                             draggable: false,
